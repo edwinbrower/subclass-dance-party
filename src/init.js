@@ -28,15 +28,24 @@ $(document).ready(function() {
       Math.random() * 1000
       //500
     );
+    window.dancers.push(dancer.$node);
     $('body').append(dancer.$node);
   });
 
   $('.lineUpButton').on('click', function(event) {
-    $('.dancer').addClass('stopAnimation');
+    for (var i = 0; i < window.dancers.length; i++) {
+      //$(window.dancers[i]).addClass('stopAnimation');
+      $(window.dancers[i]).animate({top: 200, left: 200 * (i + 1), position: 'absolute'});
+
+      // TODO: Use CSS transform instead
+      
+
+
+    }
     // $('.dancer').removeClass('moveLeft');
     // $('.dancer').removeClass('squareDancer');
     // $('.dancer').removeClass('moveLeft');
-    $('.dancer').css('left', '400px');
+    //$('.dancer').css('left', '400px');
     // for (var i = 0; i < timeOutStorage.length; i++) {
     //   clearTimeout(timeOutStorage[i]);
     // }

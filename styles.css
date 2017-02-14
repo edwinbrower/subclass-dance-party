@@ -7,6 +7,7 @@ body{
   font-size: 18px;
   background-image: url('./Images/Stage.jpg');
   background-size: cover;
+  position: relative;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -29,25 +30,29 @@ body, a:link, a:visited, a:active{
   transition: transform 1s;
 }
 
-.leftRightDancer{
+.donaldDancer{
+  height: 200px;
+  width: 200px;
   border-color: green;
+  border: 0px;
   position:absolute;
-  -webkit-animation: backandforth 2s ease 0s;
+
+  -webkit-animation: spin 2s ease 0s;
   -webkit-animation-iteration-count:infinite;
-  animation: backandforth 2s ease 0s;
+  animation: spin 2s ease 0s;
   animation-iteration-count:infinite;
   animation-direction:alternate;
+  background-image: url('./Images/trump.svg');
 }
 
-@-webkit-keyframes backandforth {0%{} 100%{left: 500px;}}
-
-@keyframes backandforth {0%{} 100%{left: 500px;}}
+@-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }}
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 
 .blinkyDancer{
 
 }
 
-.squareDancer{
+.hillaryDancer{
   border-color: blue;
 }
 
@@ -57,7 +62,8 @@ body, a:link, a:visited, a:active{
 }
 
 .stopAnimation {
-  animation-play-state: paused;
+  animation-iteration-count:1 !important;
+  animation-play-state: paused !important;
 }
 
 .moveLeft{

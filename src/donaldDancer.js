@@ -1,12 +1,12 @@
-var LeftRightDancer = function(top, left, timeBetweenSteps) {
+var DonaldDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass('leftRightDancer');
+  this.$node.addClass('donaldDancer');
 };
 
-LeftRightDancer.prototype = Object.create(Dancer.prototype);
-LeftRightDancer.prototype.constructor = LeftRightDancer;
+DonaldDancer.prototype = Object.create(Dancer.prototype);
+DonaldDancer.prototype.constructor = DonaldDancer;
 
-LeftRightDancer.prototype.step = function(timeBetweenSteps) {
+DonaldDancer.prototype.step = function(timeBetweenSteps) {
 
   var dancerStep = this.__proto__.__proto__.step;  
   dancerStep.call(this, timeBetweenSteps);
