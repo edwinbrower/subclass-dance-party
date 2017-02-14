@@ -29,5 +29,11 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
   });
+
+  $('.lineUpButton').on('click', function(event) {
+    $('.dancer').stop(true, true);
+    $('.dancer').animate({left: 10});
+  });
+
 });
 
