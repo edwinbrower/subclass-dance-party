@@ -24,19 +24,13 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position: absolute;
   transition: transform 1s;
+  height: 150px;
+  width: 150px;
 }
 
 .donaldDancer{
-  height: 200px;
-  width: 200px;
-  border-color: green;
-  border: 0px;
-  position:absolute;
-
   -webkit-animation: spin 2s ease 0s;
   -webkit-animation-iteration-count:infinite;
   animation: spin 2s ease 0s;
@@ -45,16 +39,40 @@ body, a:link, a:visited, a:active{
   background-image: url('./Images/trump.svg');
 }
 
-@-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }}
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+.dancer:hover {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  animation-timing-function: linear;
+  animation-duration: 500ms;
 
-.blinkyDancer{
-
+  /*<--transform: rotateX(180deg); -->*/
 }
 
 .hillaryDancer{
-  border-color: blue;
+  -webkit-animation: rotX 2s ease 0s;
+  -webkit-animation-iteration-count:infinite;
+  animation: rotX 2s ease 0s;
+  animation-iteration-count:infinite;
+  animation-direction: normal;
+  background-image: url('./Images/hillary.svg');
 }
+
+.obamaDancer{
+  background-image: url('./Images/obama.svg');
+}
+
+
+
+/*@-webkit-keyframes rotX {100% { -webkit-transform: rotateX(180deg); }} */
+@keyframes rotX { 100% { -webkit-transform: rotateX(180deg); transform: rotateX(180deg);}}
+
+/*@-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }} */
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}
+
+
+
+
 
 .lineUpClass{
 

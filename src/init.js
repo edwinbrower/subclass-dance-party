@@ -35,7 +35,7 @@ $(document).ready(function() {
   $('.lineUpButton').on('click', function(event) {
     for (var i = 0; i < window.dancers.length; i++) {
       //$(window.dancers[i]).addClass('stopAnimation');
-      $(window.dancers[i]).animate({top: 200, left: 200 * (i + 1), position: 'absolute'});
+      $(window.dancers[i]).animate({top: 200, left: i * window.innerWidth / window.dancers.length, position: 'absolute'});
 
       // TODO: Use CSS transform instead
       
