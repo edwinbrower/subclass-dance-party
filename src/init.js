@@ -21,6 +21,9 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
+    var pixToNum = function (stringNum) {
+      return Number(stringNum.slice(0, -2));
+    };
 
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
@@ -30,6 +33,45 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer.$node);
     $('body').append(dancer.$node);
+
+    dancer.$node.on('click', function() {
+      // find the closest dancer 
+      var currentLeft = pixToNum($(this).css('left'));
+      var currentTop = pixToNum($(this).css('top'));
+      //console.log(currentLeft.slice(0, currentLeft.length - 2));
+      //console.log(Number(currentLeft.slice(0, - 2)));
+      //console.log(pixToNum(currentLeft));
+      var smallestDistance = window.innerWidth;
+      var $closestNode;
+      for (var i = 0; i < window.dancers.length; i++) {
+        var left = pixToNum($(window.dancers[i]).css('left'));
+        var top = pixToNum($(window.dancers[i]).css('top'));
+        var distance = Math.sqrt(((currentLeft - left) * (currentLeft - left)) + ((currentTop - top) * (currentTop - top)));
+        if (distance !== 0 && distance < smallestDistance) {
+          $closestNode = window.dancers[i];
+          smallestDistance = distance;
+        }
+      }
+
+      console.log(smallestDistance);
+      dancer.$node.addClass('interactionPostClick');
+      $closestNode.addClass('interactionPostClick');
+      setTimeout(function() {
+        dancer.$node.removeClass('interactionPostClick');
+        $closestNode.removeClass('interactionPostClick');
+      }, 2000);
+      //get left and top props of clicked dancer
+        //iterate through window.dancers array
+          //get left and top props
+          // use dist formula to calc dist between current node and each node
+          // find smallest that's not 0.
+
+      // add class to current dancer and closest dancer that does something tbd
+
+
+    });
+    
+    
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -57,6 +99,7 @@ $(document).ready(function() {
           // $('.dancer').animate({left: 10});
     //$('.dancer').addClass('lineUpClass');
   });
+
 
 });
 

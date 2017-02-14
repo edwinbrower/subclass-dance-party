@@ -62,6 +62,14 @@ body, a:link, a:visited, a:active{
   background-image: url('./Images/obama.svg');
 }
 
+.interactionPostClick{
+  -webkit-animation: bounce 2s ease 0s;
+  -webkit-animation-iteration-count:1;
+  animation: bounce 2s ease 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+
 
 
 /*@-webkit-keyframes rotX {100% { -webkit-transform: rotateX(180deg); }} */
@@ -70,7 +78,11 @@ body, a:link, a:visited, a:active{
 /*@-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }} */
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}
 
-
+@keyframes bounce {
+   0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+   40% {transform: translateY(-30px);} 
+   60% {transform: translateY(-15px);} 
+} 
 
 
 
