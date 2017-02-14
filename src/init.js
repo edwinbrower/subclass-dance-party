@@ -26,13 +26,27 @@ $(document).ready(function() {
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
       Math.random() * 1000
+      //500
     );
     $('body').append(dancer.$node);
   });
 
   $('.lineUpButton').on('click', function(event) {
-    $('.dancer').stop(true, true);
-    $('.dancer').animate({left: 10});
+    $('.dancer').addClass('stopAnimation');
+    // $('.dancer').removeClass('moveLeft');
+    // $('.dancer').removeClass('squareDancer');
+    // $('.dancer').removeClass('moveLeft');
+    $('.dancer').css('left', '400px');
+    // for (var i = 0; i < timeOutStorage.length; i++) {
+    //   clearTimeout(timeOutStorage[i]);
+    // }
+    //$('.dancer').stop(true, true);
+          // for (var i = 1; i < 99999; i++) {
+          //   window.clearTimeout(i);
+          // }
+
+          // $('.dancer').animate({left: 10});
+    //$('.dancer').addClass('lineUpClass');
   });
 
 });
