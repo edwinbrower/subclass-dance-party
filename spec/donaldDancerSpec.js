@@ -19,8 +19,4 @@ describe('donaldDancer', function() {
   it('has a donaldDancer class', function() {
     expect(donaldDancer.$node).to.have.class('donaldDancer');
   });
-
-/*  it('should have an animation property', function() {
-    expect(donaldDancer.$node).to.have.css('height', '150px');
-  });*/
 });
