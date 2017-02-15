@@ -9,8 +9,8 @@ $(document).ready(function() {
     };
 
     var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
+      (window.innerHeight - 200) * Math.random() + 100,
+      (window.innerWidth - 150) * Math.random(),
       Math.random() * 1000
     );
     window.dancers.push(dancer.$node);
